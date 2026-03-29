@@ -10,6 +10,7 @@ on:
 env:
   GH_PAT: ${{ secrets.GH_PAT }}
   UPSTREAM_REPO: LoopKit/LoopWorkspace
+  ENABLE_NUKE_CERTS: ${{ secrets.ENABLE_NUKE_CERTS}}
   UPSTREAM_BRANCH: ${{ github.ref_name }} # branch on upstream repository to sync from (replace with specific branch name if needed)
   TARGET_BRANCH: ${{ github.ref_name }} # target branch on fork to be kept in sync
 
@@ -236,7 +237,6 @@ jobs:
         env:
           TEAMID: ${{ secrets.TEAMID }}
           GH_PAT: ${{ secrets.GH_PAT }}
-          ENABLE_NUKE_CERTS: ${{ secrets.ENABLE_NUKE_CERTS}}
           FASTLANE_KEY_ID: ${{ secrets.FASTLANE_KEY_ID }}
           FASTLANE_ISSUER_ID: ${{ secrets.FASTLANE_ISSUER_ID }}
           FASTLANE_KEY: ${{ secrets.FASTLANE_KEY }}
